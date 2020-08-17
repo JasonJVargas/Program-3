@@ -38,9 +38,8 @@ public class NearestNeighbor {
 		testingData();
 		printSamples();
 		accuracyCalc();
-
-		// C:\Users\varga\Documents\GitHub\Program-3\src\iris-training-data.csv
-		// C:\Users\varga\Documents\GitHub\Program-3\src\iris-testing-data.csv
+		
+		scan.close();
 	}
 
 	static void trainingData() throws IOException {
@@ -91,8 +90,8 @@ public class NearestNeighbor {
 	static void printSamples() {
 		for (int i = 0; i < arrayTest.length; i++) {
 			double[] testNum = arrayTest[i];
-			double shortestDistance = 0.0;
-			double sampleDistance = 0.0;
+			double shortestDistance = 0;
+			double sampleDistance = 0;
 
 			int smallestIndex = 0;
 			for (int j = 0; j < arrayTrain.length; j++) {
@@ -116,8 +115,8 @@ public class NearestNeighbor {
 	static void accuracyCalc() {
 
 		int sameClass = 0;
-		for (int samples = 0; samples < arrayTestClass.length; samples++) {
-			if (arrayTestClass[samples].equalsIgnoreCase(predictedLabel[samples])) {
+		for (int labels = 0; labels < arrayTestClass.length; labels++) {
+			if (arrayTestClass[labels].equalsIgnoreCase(predictedLabel[labels])) {
 				sameClass++;
 			}
 		}
